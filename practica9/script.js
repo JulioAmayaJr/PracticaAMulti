@@ -114,4 +114,46 @@ nombres.sort();
 console.log(nombres);
 
 
+const barProductos = [
+    { nombre: "Cerveza", precio: 5, stock: 100 },
+    { nombre: "Vino tinto", precio: 12, stock: 50 },
+    { nombre: "Whisky", precio: 20, stock: 30 },
+    { nombre: "Ron", precio: 15, stock: 40 },
+    { nombre: "Tequila", precio: 10, stock: 20 }
+  ];
+  
+//ejercicio 1 metodo: filter
+const productosCaros = barProductos.filter(function(producto) {
+    return producto.precio > 10;
+  });
+  console.log("Productos mayores a $10:", productosCaros);
 
+//ejercicio 2 metodo: map
+const descuento = 2;
+const productosConDescuento = barProductos.map(function(producto) {
+  return {
+    nombre: producto.nombre,
+    precio: producto.precio - descuento,
+    stock: producto.stock
+  };
+});
+console.log("Productos con descuento de $2:", productosConDescuento);
+
+//ejercicio 3 metodo: reduce
+const precioTotalEnStock = barProductos.reduce(function(acumulador, producto) {
+    return acumulador + producto.precio * producto.stock;
+  }, 0);
+  console.log("Precio total en stock: $" + precioTotalEnStock);
+
+//ejercicio 4 metodo: push
+
+const nuevoProducto = { nombre: "Vodka", precio: 18, stock: 25 };
+barProductos.push(nuevoProducto);
+console.log("Productos actualizados:", barProductos);
+
+  
+
+
+  
+
+  
